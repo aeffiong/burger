@@ -31,9 +31,13 @@ var orm = {
             cb(result);
         });
     },
-    // updateOne
-    updateOne: function( cb) {
-        // UPDATE burgers SET {burger name, devoured true } WHERE devoured = false 
+    // updateOne - not sure if this will work
+    updateOne: function(tableInput, cols, vals, condition, cb) {
+        // UPDATE burgers SET {devoured: true } WHERE id = id number
+        var queryString = "UPDATE " + tableInput;
+        queryString += " SET ";
+        queryString += "{" + cols + ": " + vals + "}";
+        queryString += " WHERE " + condition;
     }
 
 
