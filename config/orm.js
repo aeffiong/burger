@@ -15,7 +15,7 @@ var orm = {
     },
     // insertOne
     insertOne: function(tableInput, cols, vals, cb) {
-        // INSERT INTO burgers (burger_name, devoured) VALUES ("yummy burger", false);
+        // INSERT INTO burgers (burger_name) VALUES ('yummy burger');
         var queryString = "INSERT INTO " + tableInput;
         queryString += " (";
         queryString += cols.toString();
@@ -39,8 +39,6 @@ var orm = {
 
 }
 
-
-// * `updateOne()`
 
 // export to burger.js
 module.exports = orm;
