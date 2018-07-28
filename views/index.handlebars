@@ -1,12 +1,29 @@
-<h1>Eat da Burger!</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-6 text-center">
+            <h1>Eat da Burger!</h1>
+        </div>
+        <div class="col-6 text-center">
+            <div class="row">
+                {{#each burgers}}
+                    {{#unless this.devoured}}
+                <div class="col-9 text-center">
+                    {{this.id}}, {{this.burger_name}}
+                </div>
+            </div>
+        </div>
+    </div>
 
-{{!-- appropriate handlebars things to show the burgers: #each --}}
+
 
 <h2>Add a Burger</h2>
 <div>
-  <form action="/" method="POST">
+  <form method="POST" action="/">
   	<textarea type="text" name="burger"></textarea>
 
   	<button type="submit">Submit</button>
   </form>
+</div>
+{{/unless}}
+{{/each}}
 </div>

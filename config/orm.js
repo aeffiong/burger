@@ -69,17 +69,24 @@ var orm = {
             cb(result);
         });
     },
-    // updateOne - not sure if this will work
+    // updateOne
     updateOne: function(tableInput, objColVals, condition, cb) {
         // UPDATE burgers SET {devoured: true } WHERE id = id number
         var queryString = "UPDATE " + tableInput;
         queryString += " SET ";
         queryString += objToSql(objColVals);
         queryString += " WHERE " + condition;
+
+        console.log(queryString);
+        connection.query(queryString, function(err, result) {
+            if (err) {
+                throw err;
+            }
+            cb(result)
+        });
+
     }
-
-
-}
+};
 
 
 // export to burger.js
