@@ -1,7 +1,7 @@
 // import orm
 var orm = require("../config/orm.js");
 
-// if it's not burger, then it's burgers
+// burger object that houses our orm
 var burger = {
     all: function(cb) {
         // show all burgers
@@ -11,14 +11,14 @@ var burger = {
       },
       // The variables cols and vals are arrays.
         // create a new burger  
-      create: function(cols, vals, cb) {
-        orm.create("burgers", cols, vals, function(res) {
+      insertOne: function(cols, vals, cb) {
+        orm.insertOne("burgers", cols, vals, function(res) {
           cb(res);
         });
       },
     //   update a burger
-      update: function(objColVals, condition, cb) {
-        orm.update("burgers", objColVals, condition, function(res) {
+      updateOne: function(id, cb) {
+        orm.updateOne("burgers", id, function(res) {
           cb(res);
         });
       }
