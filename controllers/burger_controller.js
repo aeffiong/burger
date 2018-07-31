@@ -20,23 +20,33 @@ router.get("/", function(req, res) {
 // post
 router.post("/burgers", function(req, res) {
     burger.insertOne([
-        'burger_name'
-    ], [req.body.burger_name
+        'burger_name', 'devoured'
+    ], [req.body.burger_name, req.body.devoured
     ], function(data) {
         res.redirect("/");
     });
 });
 
 // put
-router.put("/:id", function(req, res) {
-    var condition = "id = " + req.params.id;
-    console.log("condition", condition);
-    burger.updateOne({
-        devoured: req.body.devoured
-    }, condition, function(result) {
+// router.put("/:id", function(req, res) {
+//     var condition = "id = " + req.params.id;
+//     console.log("condition", condition);
+//     burger.updateOne({
+//         devoured: req.body.devoured
+//     }, condition, function(result) {
+//         res.redirect("/");
+//     });
+// });
+
+router.put("/burgers/update", function(req, res) {
+    burger.updateOne(req.body.id, function(result) {
+        console.log(result);
         res.redirect("/");
-    });
-});
+
+    })
+})
+
+// I still need to figure out how to get my put to work, getting a cannot post error message
 
 // Export routes for server.js to use.
 module.exports = router;
