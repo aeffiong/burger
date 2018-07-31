@@ -28,11 +28,11 @@ router.post("/burgers", function(req, res) {
 });
 
 // put
-router.put("/burgers/:id", function(req, res) {
+router.put("/:id", function(req, res) {
     var condition = "id = " + req.params.id;
     console.log("condition", condition);
     burger.updateOne({
-        devoured: true
+        devoured: req.body.devoured
     }, condition, function(result) {
         res.redirect("/");
     });
