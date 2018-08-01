@@ -17,15 +17,15 @@ var burger = {
         });
       },
     //   update a burger
-      //   updateOne: function(objColVals, condition, cb) {
-      //   orm.updateOne("burgers",objColVals, condition, function(res) {
-      //     cb(res);
-      //   });
-      // }
-      updateOne: function(id, cb) {
-        orm.updateOne("burgers", id, cb)
-          cb(result);
+        updateOne: function(objColVals, condition, cb) {
+        orm.updateOne("burgers",objColVals, condition, function(res) {
+          cb(res);
+        });
       }
+      // updateOne: function(id, cb) {
+      //   orm.updateOne("burgers", id, cb)
+      //     cb(result);
+      // }
     };
 
 // export the database functions for the controller

@@ -2,6 +2,6 @@
 /* CSS is not connected */
 
 body {
-    background-image: url("../img/burger.jpg");
-    background-color: tan;
+    /* background-image: url("../img/burger.jpg"); */
+    background:tan;
 }

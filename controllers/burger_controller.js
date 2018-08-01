@@ -21,30 +21,35 @@ router.get("/", function(req, res) {
 router.post("/burgers", function(req, res) {
     burger.insertOne([
         'burger_name', 'devoured'
-    ], [req.body.burger_name, req.body.devoured
+    ], [req.body.burger_name, false
     ], function(data) {
         res.redirect("/");
     });
 });
 
 // put
-// router.put("/:id", function(req, res) {
-//     var condition = "id = " + req.params.id;
-//     console.log("condition", condition);
-//     burger.updateOne({
-//         devoured: req.body.devoured
-//     }, condition, function(result) {
-//         res.redirect("/");
-//     });
-// });
-
-router.put("/burgers/update", function(req, res) {
-    burger.updateOne(req.body.id, function(result) {
+router.put("/burgers/:id", function(req, res) {
+    var condition = "id = " + req.params.id;
+    console.log("condition", condition);
+    burger.updateOne({
+        devoured: true
+    }, condition, function(result) {
         console.log(result);
-        res.redirect("/");
+        if (result.changedRows == 0) {
+            return res.status(404).end();
+        } else {
+            res.status(200).end()
+        }
+    });
+});
 
-    })
-})
+// router.put("/burgers/update", function(req, res) {
+//     burger.updateOne(req.body.id, function(result) {
+//         console.log(result);
+//         res.redirect("/");
+
+//     })
+// })
 
 // I still need to figure out how to get my put to work, getting a cannot post error message
 
