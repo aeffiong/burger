@@ -8,7 +8,7 @@ Eat da burger makes use of both front and back end technologies to create a comp
 
 ### Get Started
 
-To get started with Eat da Burger, use the link provided [here] (https://secure-escarpment-38552.herokuapp.com/), and enjoy some of your favorite burgers.
+To get started with Eat da Burger, use the link provided [here](https://secure-escarpment-38552.herokuapp.com/), and enjoy some of your favorite burgers.
 
 ### Technologies Used
 
