@@ -15,19 +15,14 @@
                     {{#unless this.devoured}}
                 
                     {{this.id}}. {{this.burger_name}}
-                    {{!-- <form action="/burgers/update?_method=PUT" method="POST">
-                        <input type="hidden" name="id" type="text" value={{this.id}}> --}}
                         <br>
                         <button type="button" class="btn btn-default" id="submit" data-id="{{id}}">Devour It!</button>
                         <br>
-                    {{!-- </form> --}}
                     <br>
             
                 {{/unless}} 
                     {{/each}}
             </div>
-           
-
         </div>
         <div class="col-sm-6 text-center">
             <br>
@@ -46,7 +41,6 @@
     <div class="row">
         <div class="center col-sm-12 text-center">
             <h2>Add a Burger</h2>
-    
             <form action="/burgers" method="POST">
             <p>Enter a burger you want to eat!</p>
             <input type="text" id="name" name="burger_name" placeholder="Yummy Burger">
